@@ -2,61 +2,61 @@
 pets = dict()
 
 def pets_list(id):
-print("Список питомцев")
-print("---------------")
-for pet in pets:
-print(f'Имя: {pets[id]['имя']}, Вид: {pets[id]["вид"]}, Возраст: {suffix(pets[id]["возраст"])}')
+    print("Г‘ГЇГЁГ±Г®ГЄ ГЇГЁГІГ®Г¬Г¶ГҐГў")
+    print("---------------")
+    for pet in pets:
+        print(f'Г€Г¬Гї: {pets[id]['ГЁГ¬Гї']}, Г‚ГЁГ¤: {pets[id]["ГўГЁГ¤"]}, Г‚Г®Г§Г°Г Г±ГІ: {suffix(pets[id]["ГўГ®Г§Г°Г Г±ГІ"])}')
 
 def create():
-print('Введите информацию о питомце')
-name = input('Введите имя питомца: ')
-species = input('Введите вид питомца: ')
-age = int(input('Введите возраст питомца: '))
-owner_name = input('Введите владельца питомца: ')
-if pets:
-last_id = collections.deque(pets.keys(), maxlen=1)[0]
-new_id = last_id + 1
+    print('Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГѕ Г® ГЇГЁГІГ®Г¬Г¶ГҐ')
+    name = input('Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї ГЇГЁГІГ®Г¬Г¶Г : ')
+    species = input('Г‚ГўГҐГ¤ГЁГІГҐ ГўГЁГ¤ ГЇГЁГІГ®Г¬Г¶Г : ')
+    age = int(input('Г‚ГўГҐГ¤ГЁГІГҐ ГўГ®Г§Г°Г Г±ГІ ГЇГЁГІГ®Г¬Г¶Г : '))
+    owner_name = input('Г‚ГўГҐГ¤ГЁГІГҐ ГўГ«Г Г¤ГҐГ«ГјГ¶Г  ГЇГЁГІГ®Г¬Г¶Г : ')
+    if pets:
+        last_id = collections.deque(pets.keys(), maxlen=1)[0]
+        new_id = last_id + 1
 else:
-new_id = 1
-pets[new_id] = {'имя': name, 'вид': species, 'возраст': age, 'владелец': owner_name}
+    new_id = 1
+    pets[new_id] = {'ГЁГ¬Гї': name, 'ГўГЁГ¤': species, 'ГўГ®Г§Г°Г Г±ГІ': age, 'ГўГ«Г Г¤ГҐГ«ГҐГ¶': owner_name}
 
 def suffix(age):
-if 11 <= age % 100 <= 14:
-return f"{age} лет"
-elif age % 10 == 1:
-return f"{age} год"
-elif age % 10 in [2, 3, 4]:
-return f"{age} года"
+    if 11 <= age % 100 <= 14:
+        return f"{age} Г«ГҐГІ"
+        elif age % 10 == 1:
+            return f"{age} ГЈГ®Г¤"
+            elif age % 10 in [2, 3, 4]:
+                return f"{age} ГЈГ®Г¤Г "
 else:
-return f"{age} лет"
+    return f"{age} Г«ГҐГІ"
 
 def delete(pet_id):
-if pet_id in pets:
-del pets[pet_id]
-print(f"Питомец с идентификатором {pet_id} удален.")
+    if pet_id in pets:
+        del pets[pet_id]
+       print(f"ГЏГЁГІГ®Г¬ГҐГ¶ Г± ГЁГ¤ГҐГ­ГІГЁГґГЁГЄГ ГІГ®Г°Г®Г¬ {pet_id} ГіГ¤Г Г«ГҐГ­.")
 else:
-print("Питомец с таким идентификатором не найден.")
+    print("ГЏГЁГІГ®Г¬ГҐГ¶ Г± ГІГ ГЄГЁГ¬ ГЁГ¤ГҐГ­ГІГЁГґГЁГЄГ ГІГ®Г°Г®Г¬ Г­ГҐ Г­Г Г©Г¤ГҐГ­.")
 
 def update(pet_id, name=None, species=None, age=None):
-pet = pets.get(pet_id) if pet:
-if name:
-pet['name'] = name
-if species:
-pet['species'] = species
-if age is not None:
-pet['age'] = age
-print(f"Информация о питомце с ID {pet_id} обновлена.")
+    pet = pets.get(pet_id) if pet:
+        if name:
+            pet['name'] = name
+            if species:
+                pet['species'] = species
+                if age is not None:
+                    pet['age'] = age
+                    print(f"Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® ГЇГЁГІГ®Г¬Г¶ГҐ Г± ID {pet_id} Г®ГЎГ­Г®ГўГ«ГҐГ­Г .")
 else:
-print(f"Питомец с ID {pet_id} не найден.")
+    print(f"ГЏГЁГІГ®Г¬ГҐГ¶ Г± ID {pet_id} Г­ГҐ Г­Г Г©Г¤ГҐГ­.")
 
 def pets_id(pet_id):
-if pet_id in pets:
-print(pets[pet_id])
+    if pet_id in pets:
+        print(pets[pet_id])
 else:
-print(False)
+    print(False)
 
 while True:
-command = input("Введите команду (или 'stop' для выхода) : ")
-if command.lower() == 'stop':
-print("Команда 'stop' получена. Завершение программы.")
+    command = input("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г¬Г Г­Г¤Гі (ГЁГ«ГЁ 'stop' Г¤Г«Гї ГўГ»ГµГ®Г¤Г ) : ")
+    if command.lower() == 'stop':
+        print("ГЉГ®Г¬Г Г­Г¤Г  'stop' ГЇГ®Г«ГіГ·ГҐГ­Г . Г‡Г ГўГҐГ°ГёГҐГ­ГЁГҐ ГЇГ°Г®ГЈГ°Г Г¬Г¬Г».")
 break
